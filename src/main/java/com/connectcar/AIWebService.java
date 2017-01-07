@@ -1,6 +1,7 @@
 package com.connectcar;
 
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Produces;
 import javax.ws.rs.Path;
 
@@ -11,12 +12,13 @@ import javax.ws.rs.Path;
 @Path("/ai")
 public class AIWebService {
     // The Java method will process HTTP GET requests
-    @GET
+    @POST
+    @Path("/login")
     // The Java method will produce content identified by the MIME Media type "text/plain"
     @Produces("text/plain")
-    public String getClichedMessage() {
+    public String getClichedMessage(String data) {
         // Return some cliched textual content
-        return "Running successfully on Heroku";
+        return data;
     }
 
 
