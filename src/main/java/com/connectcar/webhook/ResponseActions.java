@@ -7,7 +7,10 @@ import java.util.ArrayList;
  */
 public class ResponseActions {
 
-    private static String THEROSTAT_ON_SPEECH = "Ok I am turning on your thermostat in car";
+
+    private ActionOnGoogle actionOnGoogle;
+
+    private static String THEROSTAT_ON_SPEECH = "";
     private static String THEROSTAT_OFF_SPEECH = "Ok I am turning off your thermostat in car";
     private static String MUSIC_OFF_SPEECH = "Ok I am turning on your music player. Enjoy";
     private static String MUSIC_ON_SPEECH = "Ok I am turning off your music player. Enjoy";
@@ -30,7 +33,12 @@ public class ResponseActions {
         }
     }
 
-    public static WebhookResponse getJsonResponse(ActionOnGoogle actionOnGoogle) {
+
+    public ResponseActions(ActionOnGoogle actionOnGoogle) {
+        this.actionOnGoogle = actionOnGoogle;
+    }
+
+    public WebhookResponse getJsonResponse() {
 
         String speech, displayText;
 
@@ -93,4 +101,8 @@ public class ResponseActions {
 
     }
 
+
+    public ActionOnGoogle getActionOnGoogle() {
+        return actionOnGoogle;
+    }
 }

@@ -4,10 +4,7 @@ import com.connectcar.dao.DeviceInfo;
 import com.connectcar.dao.User;
 import com.connectcar.pushcar.CarActionMessage;
 import com.connectcar.pushcar.CarMessageSender;
-import com.connectcar.webhook.ResponseActions;
-import com.connectcar.webhook.WebhookRequest;
-import com.connectcar.webhook.WebhookRequestProcessor;
-import com.connectcar.webhook.WebhookResponse;
+import com.connectcar.webhook.*;
 import com.google.android.gcm.server.Result;
 import com.google.gson.Gson;
 import org.apache.commons.io.FileUtils;
@@ -105,17 +102,19 @@ public class AIWebService {
     @Path("/actions")
     @Produces("application/json")
     @Consumes("application/json")
-    public String actionResponse(String requestData){
+    public String actionResponse(String requestData) {
 
         System.out.println("Request Data : " + requestData);
 
-       WebhookRequest request = new Gson().fromJson(requestData, WebhookRequest.class);
+        WebhookRequest request = new Gson().fromJson(requestData, WebhookRequest.class);
 
-        ResponseActions.ActionOnGoogle actionOnGoogle = WebhookRequestProcessor.processRequest(request);
+        RequestProcessor processor = new WebhookRequestProcessor();
 
-        System.out.println("Action detected " + actionOnGoogle.getAction());
+        ResponseActions responseActions = processor.processRequest(request);
 
-        WebhookResponse response = ResponseActions.getJsonResponse(actionOnGoogle);
+        System.out.println("Action detected " + responseActions.getActionOnGoogle().getAction());
+
+        WebhookResponse response = responseActions.getJsonResponse();
 
         //sendNotificationToCar(actionOnGoogle, response);
 
