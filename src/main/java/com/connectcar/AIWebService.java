@@ -2,7 +2,7 @@ package com.connectcar;
 
 import com.connectcar.dao.DeviceInfo;
 import com.connectcar.dao.User;
-import com.connectcar.dao.WebhookResponse;
+import com.connectcar.webhook.WebhookResponse;
 import com.google.gson.Gson;
 import org.apache.commons.io.FileUtils;
 
@@ -61,14 +61,20 @@ public class AIWebService {
 
         String dataInFile = "";
 
+        System.out.println("registerData = [" + registerData + "]");
+
         try {
             File textFile = new File(filePath + "device.txt");
 
             if (!textFile.exists()) {
 
+                System.out.println("Creating file for storing device info");
+
                 textFile.createNewFile();
 
             }
+
+            System.out.println("File already present writing device info to file");
 
             FileUtils.writeStringToFile(textFile, registerData);
 
@@ -76,9 +82,13 @@ public class AIWebService {
 
         } catch (IOException e) {
 
+            System.out.println("Error in storing device information " + e.getMessage());
+
         }
 
         DeviceInfo deviceInfo = new Gson().fromJson(dataInFile, DeviceInfo.class);
+
+        System.out.println(deviceInfo.toString());
 
         return deviceInfo.getDevicePushToken();
 
@@ -90,11 +100,14 @@ public class AIWebService {
     @Produces("application/json")
     public String actionResponse(String requestData){
 
-        WebhookResponse response = new WebhookResponse("Test is sucess",
+        System.out.println("Request Data : " + requestData);
+
+        WebhookResponse response = new WebhookResponse("Test is success",
                 "Test is success");
 
-
         String responseData = new Gson().toJson(response, WebhookResponse.class);
+
+        System.out.println("Sending Response to api.ai " + responseData);
 
         return responseData;
 

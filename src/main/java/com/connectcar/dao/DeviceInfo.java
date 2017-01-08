@@ -24,4 +24,13 @@ public class DeviceInfo {
     public void setDevicePushToken(String devicePushToken) {
         this.devicePushToken = devicePushToken;
     }
+
+
+    @Override
+    public String toString() {
+        return "DeviceInfo{" +
+                "userId='" + userId + '\'' +
+                ", devicePushToken='" + devicePushToken + '\'' +
+                '}';
+    }
 }
