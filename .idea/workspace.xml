@@ -6,24 +6,14 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fa5aece-bb0f-4a88-a5e9-aadfa9f98f13" name="Default" comment="Converting to POST instead of GET">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/connectcar/webhook/Context.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/connectcar/webhook/Data.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/connectcar/webhook/Fulfillment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/connectcar/webhook/Message.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/connectcar/webhook/Metadata.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/connectcar/webhook/OriginalRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/connectcar/webhook/Parameters.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/connectcar/webhook/Parameters_.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/connectcar/webhook/Result.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/connectcar/webhook/Status.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/connectcar/webhook/WebhookRequest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/connectcar/dao/WebhookResponse.java" afterPath="$PROJECT_DIR$/src/main/java/com/connectcar/webhook/WebhookResponse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/ConnectedCarProject.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/ConnectedCarProject.xml" />
+    <list default="true" id="2fa5aece-bb0f-4a88-a5e9-aadfa9f98f13" name="Default" comment="Added logs and api.ai webhook request parsing.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/connectcar/webhook/ResponseActions.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/connectcar/webhook/WebhookRequestProcessor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/ConnectedCarProject/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/out/artifacts/ConnectedCarProject/WEB-INF/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ConnectedCarProject.iml" afterPath="$PROJECT_DIR$/ConnectedCarProject.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/connectcar/AIWebService.java" afterPath="$PROJECT_DIR$/src/main/java/com/connectcar/AIWebService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/connectcar/dao/DeviceInfo.java" afterPath="$PROJECT_DIR$/src/main/java/com/connectcar/dao/DeviceInfo.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,7 +31,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/connectcar/AIWebService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="346">
-              <caret line="111" column="28" lean-forward="true" selection-start-line="111" selection-start-column="28" selection-end-line="111" selection-end-column="28" />
+              <caret line="111" column="66" lean-forward="false" selection-start-line="111" selection-start-column="51" selection-end-line="111" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,11 +39,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Context.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/connectcar/webhook/Context.java">
+      <file leaf-file-name="ResponseActions.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/connectcar/webhook/ResponseActions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="94">
+              <caret line="16" column="76" lean-forward="false" selection-start-line="16" selection-start-column="76" selection-end-line="16" selection-end-column="76" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebhookRequestProcessor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/connectcar/webhook/WebhookRequestProcessor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="18" column="64" lean-forward="true" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="522">
+              <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -62,16 +72,9 @@
       <file leaf-file-name="WebhookResponse.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/connectcar/webhook/WebhookResponse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding>
-                <element signature="e#403#404#0" expanded="true" />
-                <element signature="e#432#433#0" expanded="true" />
-                <element signature="e#470#471#0" expanded="true" />
-                <element signature="e#504#505#0" expanded="true" />
-                <element signature="e#537#538#0" expanded="true" />
-                <element signature="e#566#567#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="180">
+              <caret line="10" column="49" lean-forward="false" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -81,7 +84,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#276#277#0" expanded="false" />
+                <element signature="e#311#312#0" expanded="false" />
+                <element signature="e#367#368#0" expanded="false" />
+                <element signature="e#415#416#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,7 +100,23 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#537#538#0" expanded="false" />
+                <element signature="e#572#573#0" expanded="false" />
+                <element signature="e#628#629#0" expanded="false" />
+                <element signature="e#676#677#0" expanded="false" />
+                <element signature="e#723#724#0" expanded="false" />
+                <element signature="e#766#767#0" expanded="false" />
+                <element signature="e#941#942#0" expanded="false" />
+                <element signature="e#976#977#0" expanded="false" />
+                <element signature="e#1032#1033#0" expanded="false" />
+                <element signature="e#1080#1081#0" expanded="false" />
+                <element signature="e#1118#1119#0" expanded="false" />
+                <element signature="e#1152#1153#0" expanded="false" />
+                <element signature="e#1206#1207#0" expanded="false" />
+                <element signature="e#1252#1253#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -101,9 +126,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="364">
               <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -113,16 +136,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="346">
               <caret line="29" column="18" lean-forward="false" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
-              <folding>
-                <element signature="e#195#196#0" expanded="true" />
-                <element signature="e#224#225#0" expanded="true" />
-                <element signature="e#268#269#0" expanded="true" />
-                <element signature="e#304#305#0" expanded="true" />
-                <element signature="e#346#347#0" expanded="true" />
-                <element signature="e#384#385#0" expanded="true" />
-                <element signature="e#446#447#0" expanded="true" />
-                <element signature="e#500#501#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -132,25 +146,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-              <folding>
-                <element signature="e#186#187#0" expanded="true" />
-                <element signature="e#217#218#0" expanded="true" />
-                <element signature="e#265#266#0" expanded="true" />
-                <element signature="e#305#306#0" expanded="true" />
-                <element signature="e#340#341#0" expanded="true" />
-                <element signature="e#371#372#0" expanded="true" />
-                <element signature="e#419#420#0" expanded="true" />
-                <element signature="e#459#460#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -185,8 +180,10 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/connectcar/dao/WebHookResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/connectcar/dao/WebhookResponse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/connectcar/webhook/WebhookResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/connectcar/dao/DeviceInfo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/connectcar/webhook/WebhookResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/connectcar/webhook/ResponseActions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/connectcar/webhook/WebhookRequestProcessor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/connectcar/AIWebService.java" />
       </list>
     </option>
@@ -340,7 +337,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="utilities" />
+              <option name="myItemId" value="webhook" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -902,7 +899,7 @@
       <updated>1483748060149</updated>
       <workItem from="1483748067358" duration="544000" />
       <workItem from="1483758088436" duration="12267000" />
-      <workItem from="1483819375791" duration="9554000" />
+      <workItem from="1483819375791" duration="12609000" />
     </task>
     <task id="LOCAL-00001" summary="Added base Webservice file.">
       <created>1483762850208</created>
@@ -981,11 +978,18 @@
       <option name="project" value="LOCAL" />
       <updated>1483841143586</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added logs and api.ai webhook request parsing.">
+      <created>1483851045321</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1483851045321</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22365000" />
+    <option name="totallyTimeSpent" value="25420000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="709" extended-state="6" />
@@ -1044,7 +1048,8 @@
     <MESSAGE value="Converting to POST instead of GET" />
     <MESSAGE value="Added GSON support, created Device and User classes" />
     <MESSAGE value="Added webhook for api.ai webservice" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added webhook for api.ai webservice" />
+    <MESSAGE value="Added logs and api.ai webhook request parsing." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added logs and api.ai webhook request parsing." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1112,33 +1117,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/connectcar/webhook/Context.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/connectcar/webhook/WebhookResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
-            <element signature="e#403#404#0" expanded="true" />
-            <element signature="e#432#433#0" expanded="true" />
-            <element signature="e#470#471#0" expanded="true" />
-            <element signature="e#504#505#0" expanded="true" />
-            <element signature="e#537#538#0" expanded="true" />
-            <element signature="e#566#567#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#402#403#0" expanded="false" />
+            <element signature="e#429#430#0" expanded="false" />
+            <element signature="e#469#470#0" expanded="false" />
+            <element signature="e#501#502#0" expanded="false" />
+            <element signature="e#542#543#0" expanded="false" />
+            <element signature="e#575#576#0" expanded="false" />
+            <element signature="e#631#632#0" expanded="false" />
+            <element signature="e#675#676#0" expanded="false" />
+            <element signature="e#711#712#0" expanded="false" />
+            <element signature="e#742#743#0" expanded="false" />
+            <element signature="e#791#792#0" expanded="false" />
+            <element signature="e#831#832#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1147,7 +1143,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#276#277#0" expanded="false" />
+            <element signature="e#311#312#0" expanded="false" />
+            <element signature="e#367#368#0" expanded="false" />
+            <element signature="e#415#416#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1155,7 +1157,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#537#538#0" expanded="false" />
+            <element signature="e#572#573#0" expanded="false" />
+            <element signature="e#628#629#0" expanded="false" />
+            <element signature="e#676#677#0" expanded="false" />
+            <element signature="e#723#724#0" expanded="false" />
+            <element signature="e#766#767#0" expanded="false" />
+            <element signature="e#941#942#0" expanded="false" />
+            <element signature="e#976#977#0" expanded="false" />
+            <element signature="e#1032#1033#0" expanded="false" />
+            <element signature="e#1080#1081#0" expanded="false" />
+            <element signature="e#1118#1119#0" expanded="false" />
+            <element signature="e#1152#1153#0" expanded="false" />
+            <element signature="e#1206#1207#0" expanded="false" />
+            <element signature="e#1252#1253#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1163,16 +1181,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-          <folding>
-            <element signature="e#186#187#0" expanded="true" />
-            <element signature="e#217#218#0" expanded="true" />
-            <element signature="e#265#266#0" expanded="true" />
-            <element signature="e#305#306#0" expanded="true" />
-            <element signature="e#340#341#0" expanded="true" />
-            <element signature="e#371#372#0" expanded="true" />
-            <element signature="e#419#420#0" expanded="true" />
-            <element signature="e#459#460#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1180,16 +1189,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
           <caret line="29" column="18" lean-forward="false" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
-          <folding>
-            <element signature="e#195#196#0" expanded="true" />
-            <element signature="e#224#225#0" expanded="true" />
-            <element signature="e#268#269#0" expanded="true" />
-            <element signature="e#304#305#0" expanded="true" />
-            <element signature="e#346#347#0" expanded="true" />
-            <element signature="e#384#385#0" expanded="true" />
-            <element signature="e#446#447#0" expanded="true" />
-            <element signature="e#500#501#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1197,16 +1197,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/connectcar/webhook/WebhookResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="49" lean-forward="false" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/connectcar/webhook/WebhookRequestProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="64" lean-forward="true" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/connectcar/webhook/ResponseActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="16" column="76" lean-forward="false" selection-start-line="16" selection-start-column="76" selection-end-line="16" selection-end-column="76" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/connectcar/AIWebService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="346">
-          <caret line="111" column="28" lean-forward="true" selection-start-line="111" selection-start-column="28" selection-end-line="111" selection-end-column="28" />
+          <caret line="111" column="66" lean-forward="false" selection-start-line="111" selection-start-column="51" selection-end-line="111" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

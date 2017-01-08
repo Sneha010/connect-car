@@ -2,6 +2,9 @@ package com.connectcar;
 
 import com.connectcar.dao.DeviceInfo;
 import com.connectcar.dao.User;
+import com.connectcar.webhook.ResponseActions;
+import com.connectcar.webhook.WebhookRequest;
+import com.connectcar.webhook.WebhookRequestProcessor;
 import com.connectcar.webhook.WebhookResponse;
 import com.google.gson.Gson;
 import org.apache.commons.io.FileUtils;
@@ -102,8 +105,11 @@ public class AIWebService {
 
         System.out.println("Request Data : " + requestData);
 
-        WebhookResponse response = new WebhookResponse("Test is success",
-                "Test is success");
+        WebhookRequest request = new Gson().fromJson(requestData, WebhookRequest.class);
+
+        ResponseActions.ActionOnGoogle actionOnGoogle = WebhookRequestProcessor.processRequest(request);
+
+        WebhookResponse response = ResponseActions.getJsonResponse(actionOnGoogle);
 
         String responseData = new Gson().toJson(response, WebhookResponse.class);
 
