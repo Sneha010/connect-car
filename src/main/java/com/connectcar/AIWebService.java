@@ -2,10 +2,13 @@ package com.connectcar;
 
 import com.connectcar.dao.DeviceInfo;
 import com.connectcar.dao.User;
+import com.connectcar.pushcar.CarActionMessage;
+import com.connectcar.pushcar.CarMessageSender;
 import com.connectcar.webhook.ResponseActions;
 import com.connectcar.webhook.WebhookRequest;
 import com.connectcar.webhook.WebhookRequestProcessor;
 import com.connectcar.webhook.WebhookResponse;
+import com.google.android.gcm.server.Result;
 import com.google.gson.Gson;
 import org.apache.commons.io.FileUtils;
 
@@ -101,6 +104,7 @@ public class AIWebService {
     @POST
     @Path("/actions")
     @Produces("application/json")
+    @Consumes("application/json")
     public String actionResponse(String requestData){
 
         System.out.println("Request Data : " + requestData);
@@ -110,6 +114,16 @@ public class AIWebService {
         ResponseActions.ActionOnGoogle actionOnGoogle = WebhookRequestProcessor.processRequest(request);
 
         WebhookResponse response = ResponseActions.getJsonResponse(actionOnGoogle);
+
+        CarMessageSender sender = CarMessageSender.getInstance("");
+
+        CarActionMessage message = new CarActionMessage();
+        message.setActionOnGoogle(actionOnGoogle);
+        message.setMessage(response.getDisplayText());
+
+        Result result = sender.sendMessageToCar("", message);
+
+        System.out.println("Send message to car result = " + result);
 
         String responseData = new Gson().toJson(response, WebhookResponse.class);
 

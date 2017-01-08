@@ -42,8 +42,9 @@ public class CarMessageSender {
     }
 
 
-    public void sendMessageToCar(String regId, CarActionMessage message) {
+    public Result sendMessageToCar(String regId, CarActionMessage message) {
 
+        Result result = null;
 
         try {
             Sender sender = new Sender(apiKey);
@@ -53,13 +54,15 @@ public class CarMessageSender {
                     .addData("message", message.getMessage())
                     .build();
 
-            Result result = sender.send(pushMessage, regId, RETRIAL);
+            result = sender.send(pushMessage, regId, RETRIAL);
 
             System.out.println("Result for google server = " + result);
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        return result;
 
     }
 }
