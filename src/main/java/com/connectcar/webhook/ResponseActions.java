@@ -1,7 +1,7 @@
 package com.connectcar.webhook;
 
 /**
- * Created by dksc102950 on 1/8/17.
+ * Created by Piyush Agarwal on 1/8/17.
  */
 public class ResponseActions {
 
@@ -21,6 +21,10 @@ public class ResponseActions {
         ActionOnGoogle(int action) {
 
             this.action = action;
+        }
+
+        public int getAction() {
+            return action;
         }
     }
 

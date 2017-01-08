@@ -1,7 +1,7 @@
 package com.connectcar.dao;
 
 /**
- * Created by dksc102950 on 1/7/17.
+ * Created by Piyush Agarwal on 1/7/17.
  */
 public class DeviceInfo {
 
