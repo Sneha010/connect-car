@@ -7,10 +7,10 @@ import java.util.ArrayList;
  */
 public class ResponseActions {
 
-    private static String THEROSTAT_ON_SPEECH = " Ok I am turning on your thermostat in car";
-    private static String THEROSTAT_OFF_SPEECH = " Ok I am turning off your thermostat in car";
-    private static String MUSIC_OFF_SPEECH = " Ok I am turning on your music player. Enjoy";
-    private static String MUSIC_ON_SPEECH = " Ok I am turning off your music player. Enjoy";
+    private static String THEROSTAT_ON_SPEECH = "Ok I am turning on your thermostat in car";
+    private static String THEROSTAT_OFF_SPEECH = "Ok I am turning off your thermostat in car";
+    private static String MUSIC_OFF_SPEECH = "Ok I am turning on your music player. Enjoy";
+    private static String MUSIC_ON_SPEECH = "Ok I am turning off your music player. Enjoy";
     private static String SORRY_COULD_NOT_UNDERSTAND = "Sorry, I could not understand what you want to say. Try again.";
 
 
@@ -54,7 +54,7 @@ public class ResponseActions {
             case THERMOSTAT_ON:
 
                 speech = THEROSTAT_ON_SPEECH;
-                displayText = THEROSTAT_OFF_SPEECH;
+                displayText = THEROSTAT_ON_SPEECH;
 
                 break;
 
