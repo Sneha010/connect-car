@@ -101,7 +101,6 @@ public class AIWebService {
     @POST
     @Path("/actions")
     @Produces("application/json")
-    @Consumes("application/json")
     public String actionResponse(String requestData) {
 
         System.out.println("Request Data : " + requestData);

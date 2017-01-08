@@ -52,7 +52,7 @@ public class ResponseActions {
 
         google.setExpectUserResponse(false);
         google.setIsSsml(false);
-        google.setPermissionsRequest(null);
+        google.setPermissionsRequest(permissionsRequest);
 
         Data data = new Data();
         data.setGoogle(google);
@@ -96,7 +96,7 @@ public class ResponseActions {
         }
 
 
-        return new WebhookResponse(speech, displayText, data, null);
+        return new WebhookResponse(speech, displayText, data, new ArrayList<>());
 
 
     }
