@@ -113,6 +113,8 @@ public class AIWebService {
 
         ResponseActions.ActionOnGoogle actionOnGoogle = WebhookRequestProcessor.processRequest(request);
 
+        System.out.println("Action detected " + actionOnGoogle.getAction());
+
         WebhookResponse response = ResponseActions.getJsonResponse(actionOnGoogle);
 
         //sendNotificationToCar(actionOnGoogle, response);
