@@ -44,7 +44,7 @@ public class ResponseActions {
 
         google.setExpectUserResponse(true);
         google.setIsSsml(true);
-        google.setPermissionsRequest(new PermissionsRequest());
+        google.setPermissionsRequest(permissionsRequest);
 
         Data data = new Data();
         data.setGoogle(google);
