@@ -8,8 +8,8 @@ package com.connectcar.webhook;
  */
 public class WebhookRequestProcessor {
 
-    private static String THERMO_ON = "thermostate-on";
-    private static String THERMO_OFF = "thermostate-off";
+    private static String THERMO_ON = "thermostat-on";
+    private static String THERMO_OFF = "thermostat-off";
     private static String MUSIC_ON = "music-on";
     private static String MUSIC_OFF = "music-off";
 
