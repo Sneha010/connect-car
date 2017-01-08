@@ -36,6 +36,12 @@ public class ResponseActions {
 
         Google google = new Google();
 
+        PermissionsRequest permissionsRequest = new PermissionsRequest();
+
+        permissionsRequest.setOptContext("");
+
+        permissionsRequest.setPermissions(new ArrayList<String>());
+
         google.setExpectUserResponse(true);
         google.setIsSsml(true);
         google.setPermissionsRequest(new PermissionsRequest());
