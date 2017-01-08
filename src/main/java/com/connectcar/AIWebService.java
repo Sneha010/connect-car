@@ -115,6 +115,18 @@ public class AIWebService {
 
         WebhookResponse response = ResponseActions.getJsonResponse(actionOnGoogle);
 
+        //sendNotificationToCar(actionOnGoogle, response);
+
+        String responseData = new Gson().toJson(response, WebhookResponse.class);
+
+        System.out.println("Sending Response to api.ai " + responseData);
+
+        return requestData;
+
+    }
+
+
+    private void sendNotificationToCar(ResponseActions.ActionOnGoogle actionOnGoogle, WebhookResponse response) {
         CarMessageSender sender = CarMessageSender.getInstance("");
 
         CarActionMessage message = new CarActionMessage();
@@ -124,13 +136,6 @@ public class AIWebService {
         Result result = sender.sendMessageToCar("", message);
 
         System.out.println("Send message to car result = " + result);
-
-        String responseData = new Gson().toJson(response, WebhookResponse.class);
-
-        System.out.println("Sending Response to api.ai " + responseData);
-
-        return requestData;
-
     }
 
 

@@ -1,5 +1,7 @@
 package com.connectcar.webhook;
 
+import java.util.ArrayList;
+
 /**
  * Created by Piyush Agarwal on 1/8/17.
  */
@@ -31,6 +33,15 @@ public class ResponseActions {
     public static WebhookResponse getJsonResponse(ActionOnGoogle actionOnGoogle) {
 
         String speech, displayText;
+
+        Google google = new Google();
+
+        google.setExpectUserResponse(false);
+        google.setIsSsml(false);
+        google.setPermissionsRequest(new PermissionsRequest());
+
+        Data data = new Data();
+        data.setGoogle(google);
 
         switch (actionOnGoogle) {
 
@@ -70,7 +81,8 @@ public class ResponseActions {
 
         }
 
-        return new WebhookResponse(speech, displayText);
+
+        return new WebhookResponse(speech, displayText, data, new ArrayList<>());
 
 
     }
