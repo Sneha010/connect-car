@@ -7,93 +7,38 @@ import com.google.gson.annotations.SerializedName;
 
 public class Data {
 
-    @SerializedName("text")
+    @SerializedName("inputs")
     @Expose
-    private String text;
-    @SerializedName("match")
-    @Expose
-    private List<String> match = null;
-    @SerializedName("type")
-    @Expose
-    private String type;
-    @SerializedName("event")
-    @Expose
-    private String event;
-    @SerializedName("team")
-    @Expose
-    private String team;
+    private List<Input> inputs = null;
     @SerializedName("user")
     @Expose
-    private String user;
-    @SerializedName("channel")
+    private User user;
+    @SerializedName("conversation")
     @Expose
-    private String channel;
-    @SerializedName("ts")
-    @Expose
-    private String ts;
+    private Conversation conversation;
 
-    public String getText() {
-        return text;
+    public List<Input> getInputs() {
+        return inputs;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setInputs(List<Input> inputs) {
+        this.inputs = inputs;
     }
 
-    public List<String> getMatch() {
-        return match;
-    }
-
-    public void setMatch(List<String> match) {
-        this.match = match;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getEvent() {
-        return event;
-    }
-
-    public void setEvent(String event) {
-        this.event = event;
-    }
-
-    public String getTeam() {
-        return team;
-    }
-
-    public void setTeam(String team) {
-        this.team = team;
-    }
-
-    public String getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(String user) {
+    public void setUser(User user) {
         this.user = user;
     }
 
-    public String getChannel() {
-        return channel;
+    public Conversation getConversation() {
+        return conversation;
     }
 
-    public void setChannel(String channel) {
-        this.channel = channel;
-    }
-
-    public String getTs() {
-        return ts;
-    }
-
-    public void setTs(String ts) {
-        this.ts = ts;
+    public void setConversation(Conversation conversation) {
+        this.conversation = conversation;
     }
 
 }

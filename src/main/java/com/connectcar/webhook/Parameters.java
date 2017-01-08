@@ -6,49 +6,27 @@ import com.google.gson.annotations.SerializedName;
 
 public class Parameters {
 
-    @SerializedName("slack_channel")
+    @SerializedName("device-type")
     @Expose
-    private String slackChannel;
-    @SerializedName("shipping-zone.original")
+    private String deviceType;
+    @SerializedName("switch")
     @Expose
-    private String shippingZoneOriginal;
-    @SerializedName("shipping-zone")
-    @Expose
-    private String shippingZone;
-    @SerializedName("slack_user_id")
-    @Expose
-    private String slackUserId;
+    private String _switch;
 
-    public String getSlackChannel() {
-        return slackChannel;
+    public String getDeviceType() {
+        return deviceType;
     }
 
-    public void setSlackChannel(String slackChannel) {
-        this.slackChannel = slackChannel;
+    public void setDeviceType(String deviceType) {
+        this.deviceType = deviceType;
     }
 
-    public String getShippingZoneOriginal() {
-        return shippingZoneOriginal;
+    public String getSwitch() {
+        return _switch;
     }
 
-    public void setShippingZoneOriginal(String shippingZoneOriginal) {
-        this.shippingZoneOriginal = shippingZoneOriginal;
-    }
-
-    public String getShippingZone() {
-        return shippingZone;
-    }
-
-    public void setShippingZone(String shippingZone) {
-        this.shippingZone = shippingZone;
-    }
-
-    public String getSlackUserId() {
-        return slackUserId;
-    }
-
-    public void setSlackUserId(String slackUserId) {
-        this.slackUserId = slackUserId;
+    public void setSwitch(String _switch) {
+        this._switch = _switch;
     }
 
 }

@@ -109,7 +109,7 @@ public class AIWebService {
 
         System.out.println("Request Data : " + requestData);
 
-       /* WebhookRequest request = new Gson().fromJson(requestData, WebhookRequest.class);
+       WebhookRequest request = new Gson().fromJson(requestData, WebhookRequest.class);
 
         ResponseActions.ActionOnGoogle actionOnGoogle = WebhookRequestProcessor.processRequest(request);
 
@@ -127,7 +127,7 @@ public class AIWebService {
 
         String responseData = new Gson().toJson(response, WebhookResponse.class);
 
-        System.out.println("Sending Response to api.ai " + responseData);*/
+        System.out.println("Sending Response to api.ai " + responseData);
 
         return requestData;
 

@@ -7,36 +7,52 @@ import com.google.gson.annotations.SerializedName;
 
 public class Result {
 
+    @SerializedName("source")
+    @Expose
+    private String source;
+    @SerializedName("resolvedQuery")
+    @Expose
+    private String resolvedQuery;
     @SerializedName("speech")
     @Expose
     private String speech;
+    @SerializedName("action")
+    @Expose
+    private String action;
+    @SerializedName("actionIncomplete")
+    @Expose
+    private Boolean actionIncomplete;
+    @SerializedName("parameters")
+    @Expose
+    private Parameters parameters;
+    @SerializedName("contexts")
+    @Expose
+    private List<Object> contexts = null;
+    @SerializedName("metadata")
+    @Expose
+    private Metadata metadata;
     @SerializedName("fulfillment")
     @Expose
     private Fulfillment fulfillment;
     @SerializedName("score")
     @Expose
     private Double score;
-    @SerializedName("source")
-    @Expose
-    private String source;
-    @SerializedName("action")
-    @Expose
-    private String action;
-    @SerializedName("resolvedQuery")
-    @Expose
-    private String resolvedQuery;
-    @SerializedName("actionIncomplete")
-    @Expose
-    private Boolean actionIncomplete;
-    @SerializedName("contexts")
-    @Expose
-    private List<Context> contexts = null;
-    @SerializedName("parameters")
-    @Expose
-    private Parameters_ parameters;
-    @SerializedName("metadata")
-    @Expose
-    private Metadata metadata;
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public String getResolvedQuery() {
+        return resolvedQuery;
+    }
+
+    public void setResolvedQuery(String resolvedQuery) {
+        this.resolvedQuery = resolvedQuery;
+    }
 
     public String getSpeech() {
         return speech;
@@ -44,6 +60,46 @@ public class Result {
 
     public void setSpeech(String speech) {
         this.speech = speech;
+    }
+
+    public String getAction() {
+        return action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+    }
+
+    public Boolean getActionIncomplete() {
+        return actionIncomplete;
+    }
+
+    public void setActionIncomplete(Boolean actionIncomplete) {
+        this.actionIncomplete = actionIncomplete;
+    }
+
+    public Parameters getParameters() {
+        return parameters;
+    }
+
+    public void setParameters(Parameters parameters) {
+        this.parameters = parameters;
+    }
+
+    public List<Object> getContexts() {
+        return contexts;
+    }
+
+    public void setContexts(List<Object> contexts) {
+        this.contexts = contexts;
+    }
+
+    public Metadata getMetadata() {
+        return metadata;
+    }
+
+    public void setMetadata(Metadata metadata) {
+        this.metadata = metadata;
     }
 
     public Fulfillment getFulfillment() {
@@ -60,62 +116,6 @@ public class Result {
 
     public void setScore(Double score) {
         this.score = score;
-    }
-
-    public String getSource() {
-        return source;
-    }
-
-    public void setSource(String source) {
-        this.source = source;
-    }
-
-    public String getAction() {
-        return action;
-    }
-
-    public void setAction(String action) {
-        this.action = action;
-    }
-
-    public String getResolvedQuery() {
-        return resolvedQuery;
-    }
-
-    public void setResolvedQuery(String resolvedQuery) {
-        this.resolvedQuery = resolvedQuery;
-    }
-
-    public Boolean getActionIncomplete() {
-        return actionIncomplete;
-    }
-
-    public void setActionIncomplete(Boolean actionIncomplete) {
-        this.actionIncomplete = actionIncomplete;
-    }
-
-    public List<Context> getContexts() {
-        return contexts;
-    }
-
-    public void setContexts(List<Context> contexts) {
-        this.contexts = contexts;
-    }
-
-    public Parameters_ getParameters() {
-        return parameters;
-    }
-
-    public void setParameters(Parameters_ parameters) {
-        this.parameters = parameters;
-    }
-
-    public Metadata getMetadata() {
-        return metadata;
-    }
-
-    public void setMetadata(Metadata metadata) {
-        this.metadata = metadata;
     }
 
 }

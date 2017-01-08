@@ -12,6 +12,9 @@ public class Metadata {
     @SerializedName("webhookUsed")
     @Expose
     private String webhookUsed;
+    @SerializedName("webhookForSlotFillingUsed")
+    @Expose
+    private String webhookForSlotFillingUsed;
     @SerializedName("intentName")
     @Expose
     private String intentName;
@@ -30,6 +33,14 @@ public class Metadata {
 
     public void setWebhookUsed(String webhookUsed) {
         this.webhookUsed = webhookUsed;
+    }
+
+    public String getWebhookForSlotFillingUsed() {
+        return webhookForSlotFillingUsed;
+    }
+
+    public void setWebhookForSlotFillingUsed(String webhookForSlotFillingUsed) {
+        this.webhookForSlotFillingUsed = webhookForSlotFillingUsed;
     }
 
     public String getIntentName() {

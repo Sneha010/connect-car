@@ -6,20 +6,12 @@ import com.google.gson.annotations.SerializedName;
 
 public class Message {
 
-    @SerializedName("speech")
-    @Expose
-    private String speech;
     @SerializedName("type")
     @Expose
     private Integer type;
-
-    public String getSpeech() {
-        return speech;
-    }
-
-    public void setSpeech(String speech) {
-        this.speech = speech;
-    }
+    @SerializedName("speech")
+    @Expose
+    private String speech;
 
     public Integer getType() {
         return type;
@@ -27,6 +19,14 @@ public class Message {
 
     public void setType(Integer type) {
         this.type = type;
+    }
+
+    public String getSpeech() {
+        return speech;
+    }
+
+    public void setSpeech(String speech) {
+        this.speech = speech;
     }
 
 }

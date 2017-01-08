@@ -6,31 +6,31 @@ import com.google.gson.annotations.SerializedName;
 
 public class WebhookRequest {
 
-    @SerializedName("originalRequest")
+    @SerializedName("id")
     @Expose
-    private OriginalRequest originalRequest;
+    private String id;
     @SerializedName("timestamp")
     @Expose
     private String timestamp;
     @SerializedName("result")
     @Expose
     private Result result;
-    @SerializedName("sessionId")
-    @Expose
-    private String sessionId;
-    @SerializedName("id")
-    @Expose
-    private String id;
     @SerializedName("status")
     @Expose
     private Status status;
+    @SerializedName("sessionId")
+    @Expose
+    private String sessionId;
+    @SerializedName("originalRequest")
+    @Expose
+    private OriginalRequest originalRequest;
 
-    public OriginalRequest getOriginalRequest() {
-        return originalRequest;
+    public String getId() {
+        return id;
     }
 
-    public void setOriginalRequest(OriginalRequest originalRequest) {
-        this.originalRequest = originalRequest;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTimestamp() {
@@ -49,6 +49,14 @@ public class WebhookRequest {
         this.result = result;
     }
 
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
     public String getSessionId() {
         return sessionId;
     }
@@ -57,20 +65,12 @@ public class WebhookRequest {
         this.sessionId = sessionId;
     }
 
-    public String getId() {
-        return id;
+    public OriginalRequest getOriginalRequest() {
+        return originalRequest;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
+    public void setOriginalRequest(OriginalRequest originalRequest) {
+        this.originalRequest = originalRequest;
     }
 
 }
