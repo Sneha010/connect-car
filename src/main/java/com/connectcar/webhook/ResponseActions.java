@@ -10,7 +10,7 @@ public class ResponseActions {
 
     private ActionOnGoogle actionOnGoogle;
 
-    private static String THEROSTAT_ON_SPEECH = "";
+    private static String THEROSTAT_ON_SPEECH = "Ok I am turning on your thermostat in car";
     private static String THEROSTAT_OFF_SPEECH = "Ok I am turning off your thermostat in car";
     private static String MUSIC_OFF_SPEECH = "Ok I am turning on your music player. Enjoy";
     private static String MUSIC_ON_SPEECH = "Ok I am turning off your music player. Enjoy";
@@ -52,7 +52,7 @@ public class ResponseActions {
 
         google.setExpectUserResponse(false);
         google.setIsSsml(false);
-        google.setPermissionsRequest(permissionsRequest);
+        google.setPermissionsRequest(null);
 
         Data data = new Data();
         data.setGoogle(google);
@@ -96,7 +96,7 @@ public class ResponseActions {
         }
 
 
-        return new WebhookResponse(speech, displayText, data, new ArrayList<>());
+        return new WebhookResponse(speech, displayText, data, null);
 
 
     }
