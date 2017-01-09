@@ -112,14 +112,21 @@ public class ResponseActions {
         try {
             for (int i = 0; i < s.length(); i++){
                 System.out.println(s.charAt(i));
-                sb.append((int)s.charAt(i));
+
+                int asciiValue = (int)s.charAt(i);
+
+                String formatString = String.format("%03d", asciiValue);
+
+                sb.append(formatString);
+                sb.append(" ");
                 char c = s.charAt(i);
+
             }
             ascString = sb.toString();
 
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
-        return ascString;
+        return ascString.trim();
     }
 }

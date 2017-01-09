@@ -37,8 +37,8 @@
       <file leaf-file-name="ResponseActions.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/connectcar/webhook/ResponseActions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="98" column="49" lean-forward="false" selection-start-line="98" selection-start-column="49" selection-end-line="98" selection-end-column="49" />
+            <state relative-caret-position="390">
+              <caret line="125" column="0" lean-forward="true" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
               <folding>
                 <element signature="e#1051#1052#0" expanded="true" />
                 <element signature="e#1103#1104#0" expanded="true" />
@@ -873,7 +873,7 @@
       <updated>1483748060149</updated>
       <workItem from="1483748067358" duration="544000" />
       <workItem from="1483758088436" duration="12267000" />
-      <workItem from="1483819375791" duration="34323000" />
+      <workItem from="1483819375791" duration="35140000" />
     </task>
     <task id="LOCAL-00001" summary="Added base Webservice file.">
       <created>1483762850208</created>
@@ -1106,11 +1106,18 @@
       <option name="project" value="LOCAL" />
       <updated>1483938343020</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Converting actual message in to ascii to test on Google Home Device.">
+      <created>1483938995976</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1483938995976</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47134000" />
+    <option name="totallyTimeSpent" value="47951000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="709" extended-state="6" />
@@ -1158,7 +1165,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated Procfile." />
     <MESSAGE value="Changing webservice name and data." />
     <MESSAGE value="Converting to POST instead of GET" />
     <MESSAGE value="Added GSON support, created Device and User classes" />
@@ -1183,7 +1189,8 @@
     <MESSAGE value="Converted string to ascii characters." />
     <MESSAGE value="Corrected mistake in response sent to Home Device" />
     <MESSAGE value="ASCII hardcoded to test home" />
-    <option name="LAST_COMMIT_MESSAGE" value="ASCII hardcoded to test home" />
+    <MESSAGE value="Converting actual message in to ascii to test on Google Home Device." />
+    <option name="LAST_COMMIT_MESSAGE" value="Converting actual message in to ascii to test on Google Home Device." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1437,8 +1444,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/connectcar/webhook/ResponseActions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="98" column="49" lean-forward="false" selection-start-line="98" selection-start-column="49" selection-end-line="98" selection-end-column="49" />
+        <state relative-caret-position="390">
+          <caret line="125" column="0" lean-forward="true" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
           <folding>
             <element signature="e#1051#1052#0" expanded="true" />
             <element signature="e#1103#1104#0" expanded="true" />
