@@ -6,7 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fa5aece-bb0f-4a88-a5e9-aadfa9f98f13" name="Default" comment="Remove Consumes">
+    <list default="true" id="2fa5aece-bb0f-4a88-a5e9-aadfa9f98f13" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/connectcar/webhook/ResponseActions.java" afterPath="$PROJECT_DIR$/src/main/java/com/connectcar/webhook/ResponseActions.java" />
     </list>
@@ -37,13 +37,13 @@
       <file leaf-file-name="ResponseActions.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/connectcar/webhook/ResponseActions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="98" column="61" lean-forward="false" selection-start-line="98" selection-start-column="61" selection-end-line="98" selection-end-column="61" />
+            <state relative-caret-position="216">
+              <caret line="98" column="49" lean-forward="false" selection-start-line="98" selection-start-column="49" selection-end-line="98" selection-end-column="49" />
               <folding>
                 <element signature="e#1051#1052#0" expanded="true" />
                 <element signature="e#1103#1104#0" expanded="true" />
-                <element signature="e#2568#2569#0" expanded="true" />
-                <element signature="e#2605#2606#0" expanded="true" />
+                <element signature="e#2556#2557#0" expanded="true" />
+                <element signature="e#2593#2594#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -873,7 +873,7 @@
       <updated>1483748060149</updated>
       <workItem from="1483748067358" duration="544000" />
       <workItem from="1483758088436" duration="12267000" />
-      <workItem from="1483819375791" duration="33806000" />
+      <workItem from="1483819375791" duration="34323000" />
     </task>
     <task id="LOCAL-00001" summary="Added base Webservice file.">
       <created>1483762850208</created>
@@ -1099,11 +1099,18 @@
       <option name="project" value="LOCAL" />
       <updated>1483937787677</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="ASCII hardcoded to test home">
+      <created>1483938343020</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1483938343020</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46617000" />
+    <option name="totallyTimeSpent" value="47134000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="709" extended-state="6" />
@@ -1151,7 +1158,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added webxml path to build war from source." />
     <MESSAGE value="Updated Procfile." />
     <MESSAGE value="Changing webservice name and data." />
     <MESSAGE value="Converting to POST instead of GET" />
@@ -1176,7 +1182,8 @@
     <MESSAGE value="Remove Consumes" />
     <MESSAGE value="Converted string to ascii characters." />
     <MESSAGE value="Corrected mistake in response sent to Home Device" />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrected mistake in response sent to Home Device" />
+    <MESSAGE value="ASCII hardcoded to test home" />
+    <option name="LAST_COMMIT_MESSAGE" value="ASCII hardcoded to test home" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1430,13 +1437,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/connectcar/webhook/ResponseActions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="98" column="61" lean-forward="false" selection-start-line="98" selection-start-column="61" selection-end-line="98" selection-end-column="61" />
+        <state relative-caret-position="216">
+          <caret line="98" column="49" lean-forward="false" selection-start-line="98" selection-start-column="49" selection-end-line="98" selection-end-column="49" />
           <folding>
             <element signature="e#1051#1052#0" expanded="true" />
             <element signature="e#1103#1104#0" expanded="true" />
-            <element signature="e#2568#2569#0" expanded="true" />
-            <element signature="e#2605#2606#0" expanded="true" />
+            <element signature="e#2556#2557#0" expanded="true" />
+            <element signature="e#2593#2594#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -96,7 +96,7 @@ public class ResponseActions {
         }
 
 
-        return new WebhookResponse("87 101 108 99 111 109 101", displayText, data, new ArrayList<>());
+        return new WebhookResponse(toAscii(speech), displayText, data, new ArrayList<>());
 
 
     }
@@ -106,10 +106,9 @@ public class ResponseActions {
         return actionOnGoogle;
     }
 
-    public static long toAscii(String s){
+    public static String toAscii(String s){
         StringBuilder sb = new StringBuilder();
         String ascString = null;
-        long asciiInt = 0;
         try {
             for (int i = 0; i < s.length(); i++){
                 System.out.println(s.charAt(i));
@@ -117,11 +116,10 @@ public class ResponseActions {
                 char c = s.charAt(i);
             }
             ascString = sb.toString();
-            asciiInt = Long.parseLong(ascString);
 
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
-        return asciiInt;
+        return ascString;
     }
 }
