@@ -44,15 +44,11 @@ public class ResponseActions {
 
         Google google = new Google();
 
-        PermissionsRequest permissionsRequest = new PermissionsRequest();
 
-        permissionsRequest.setOptContext("");
-
-        permissionsRequest.setPermissions(new ArrayList<String>());
 
         google.setExpectUserResponse(false);
         google.setIsSsml(false);
-        google.setPermissionsRequest(permissionsRequest);
+        google.setPermissionsRequest(null);
 
         Data data = new Data();
         data.setGoogle(google);
