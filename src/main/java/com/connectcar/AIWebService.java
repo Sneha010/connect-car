@@ -123,7 +123,7 @@ public class AIWebService {
 
         System.out.println("Sending Response to api.ai " + responseData);
 
-        return requestData;
+        return responseData;
 
     }
 
