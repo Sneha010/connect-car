@@ -111,8 +111,6 @@ public class ResponseActions {
         String ascString = null;
         try {
             for (int i = 0; i < s.length(); i++){
-                System.out.println(s.charAt(i));
-
                 int asciiValue = (int)s.charAt(i);
 
                 String formatString = String.format("%03d", asciiValue);
