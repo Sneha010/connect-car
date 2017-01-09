@@ -92,7 +92,7 @@ public class ResponseActions {
         }
 
 
-        return new WebhookResponse(toAscii(speech), displayText, data, new ArrayList<>());
+        return new WebhookResponse(speech, displayText, data, new ArrayList<>());
 
 
     }
