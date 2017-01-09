@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="ConnectedCarProjectWar">
-    <output-path>$PROJECT_DIR$/out/artifacts/ConnectedCarProjectWar</output-path>
-    <root id="archive" name="ConnectedCarProjectWar.war">
-      <element id="artifact" artifact-name="ConnectedCarProject" />
-    </root>
-  </artifact>
-</component>
