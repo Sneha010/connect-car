@@ -26,6 +26,8 @@ public class AIWebService {
 
     private static final String filePath = new File("").getAbsolutePath();
 
+    private static final String API_KEY="";
+
     @POST
     @Path("/login")
     // The Java method will produce content identified by the MIME Media type "text/plain"
