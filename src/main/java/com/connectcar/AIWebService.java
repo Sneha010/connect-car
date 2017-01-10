@@ -1,7 +1,9 @@
 package com.connectcar;
 
 import com.connectcar.dao.DeviceInfo;
+import com.connectcar.dao.Response;
 import com.connectcar.dao.User;
+import com.connectcar.datastore.FileStorage;
 import com.connectcar.processor.WebhookResponseHandler;
 import com.connectcar.processor.WebhookRequestProcessor;
 import com.connectcar.pushcar.CarActionMessage;
@@ -11,10 +13,7 @@ import com.google.android.gcm.server.Result;
 import com.google.gson.Gson;
 import org.apache.commons.io.FileUtils;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Produces;
-import javax.ws.rs.Path;
+import javax.ws.rs.*;
 import java.io.File;
 import java.io.IOException;
 
@@ -26,78 +25,70 @@ import java.io.IOException;
 public class AIWebService {
     // The Java method will process HTTP GET requests
 
-    private static final String filePath = new File("").getAbsolutePath();
 
     private static final String API_KEY="";
 
     @POST
-    @Path("/login")
+    @Path("/user")
     // The Java method will produce content identified by the MIME Media type "text/plain"
-    @Produces("text/plain")
+    @Produces("application/json")
     @Consumes("application/json")
-    public String getClichedMessage(String data) throws IOException {
+    public String createUser(String data) throws IOException {
         // Return some cliched textual content
 
-        String dataInFile = "";
-        try {
-            File textFile = new File(filePath + "userinfo.txt");
+        System.out.println("User data received = [" + data + "]");
 
-            if (!textFile.exists()) {
+        Response response = FileStorage.storeUserInfo(data);
 
-                textFile.createNewFile();
+        System.out.println("Sending response = " + response);
 
-            }
-
-            FileUtils.writeStringToFile(textFile, data);
-
-            dataInFile = FileUtils.readFileToString(textFile);
-
-        } catch (IOException e) {
-
-        }
-
-        User user = new Gson().fromJson(dataInFile, User.class);
-
-        return user.getUserName();
+        return response.toString();
     }
 
-    @POST
-    @Path("/registerdevice")
+
+    @GET
+    @Path("/user")
+    // The Java method will produce content identified by the MIME Media type "text/plain"
     @Produces("application/json")
+    public String getUser() throws IOException {
+        // Return some cliched textual content
+
+
+        User response = FileStorage.getUserInfo();
+
+        System.out.println("Sending response = " + response.getName());
+
+        return response.getName();
+    }
+
+
+    @POST
+    @Path("/device")
+    @Produces("application/json")
+    @Consumes("application/json")
     public String registerDevice(String registerData) {
 
-        String dataInFile = "";
+        System.out.println("Device data received = [" + registerData + "]");
 
-        System.out.println("registerData = [" + registerData + "]");
+        Response response = FileStorage.storeDeviceInfo(registerData);
 
-        try {
-            File textFile = new File(filePath + "device.txt");
+        System.out.println("Sending response = " + response);
 
-            if (!textFile.exists()) {
+        return response.toString();
 
-                System.out.println("Creating file for storing device info");
+    }
 
-                textFile.createNewFile();
+    @GET
+    @Path("/device")
+    @Produces("application/json")
+    public String getDevice() {
 
-            }
 
-            System.out.println("File already present writing device info to file");
+        DeviceInfo response = FileStorage.getDeviceInfo();
 
-            FileUtils.writeStringToFile(textFile, registerData);
+        System.out.println("Sending response = " + response.getDevicePushToken());
 
-            dataInFile = FileUtils.readFileToString(textFile);
-
-        } catch (IOException e) {
-
-            System.out.println("Error in storing device information " + e.getMessage());
-
-        }
-
-        DeviceInfo deviceInfo = new Gson().fromJson(dataInFile, DeviceInfo.class);
-
-        System.out.println(deviceInfo.toString());
-
-        return deviceInfo.getDevicePushToken();
+        return response.getDevicePushToken();
 
     }
 
