@@ -5,10 +5,12 @@ package com.connectcar.processor;
  */
 public class Speeches {
 
-    public static String THERMOSTAT_ON_SPEECH = "Ok I am turning on your thermostat in car";
-    public static String THERMOSTAT_OFF_SPEECH = "Ok I am turning off your thermostat in car";
-    public static String MUSIC_OFF_SPEECH = "Ok I am turning on your music player. Enjoy";
-    public static String MUSIC_ON_SPEECH = "Ok I am turning off your music player. Enjoy";
-    public static String SORRY_COULD_NOT_UNDERSTAND = "Sorry, I could not understand what you want to say. Try again.";
+    public static String THERMOSTAT_ON_SPEECH = "Ok <user> I am turning on your <device> in car.";
+    public static String THERMOSTAT_OFF_SPEECH = "Ok <user> I am turning off your <device> in car";
+    public static String MUSIC_OFF_SPEECH = "Ok <user> I am turning on your <device>. Enjoy";
+    public static String MUSIC_ON_SPEECH = "Ok <user> I am turning off your music player. Enjoy";
+    public static String SORRY_COULD_NOT_UNDERSTAND = "Sorry <user>, I could not understand what you want to say. Try again.";
+
+
 
 }

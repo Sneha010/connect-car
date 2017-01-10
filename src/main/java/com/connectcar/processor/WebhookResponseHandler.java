@@ -1,5 +1,6 @@
 package com.connectcar.processor;
 
+import com.connectcar.datastore.FileStorage;
 import com.connectcar.webhook.WebhookResponse;
 import com.google.gson.Gson;
 
@@ -18,6 +19,8 @@ public class WebhookResponseHandler {
 
         private int action;
 
+        private String deviceName;
+
         ActionsOnCar(int action) {
 
             this.action = action;
@@ -25,6 +28,18 @@ public class WebhookResponseHandler {
 
         public int getAction() {
             return action;
+        }
+
+        public ActionsOnCar setDeviceName(String deviceName) {
+
+            this.deviceName = deviceName;
+
+            return this;
+
+        }
+
+        public String getDeviceName() {
+            return deviceName;
         }
     }
 
@@ -78,7 +93,7 @@ public class WebhookResponseHandler {
 
 
         WebhookResponse webhookResponse = new WebhookResponse.Builder()
-                .speech(speech)
+                .speech(personalizedMySpeech(speech))
                 .displayText(displayText)
                 .expectUserResponse(false)
                 .isSSML(false)
@@ -87,6 +102,14 @@ public class WebhookResponseHandler {
         this.webhookResponse = webhookResponse;
 
         return webhookResponse;
+
+
+    }
+
+    private String personalizedMySpeech(String speech) {
+
+        return speech.replaceAll("<user>", FileStorage.getUserInfo().getName()).replaceAll("<device>",
+                actionsOnCar.getDeviceName());
 
 
     }

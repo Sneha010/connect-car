@@ -25,6 +25,11 @@ public class WebhookRequestProcessor extends RequestProcessor<WebhookResponseHan
     private static String MUSIC_ON = "music-on";
     private static String MUSIC_OFF = "music-off";
 
+    private static final String DEVICE_TYPE_THERMO = "thermostat";
+    private static final String DEVICE_TYPE_HEATER = "heater";
+    private static final String DEVICE_TYPE_MUSIC = "music player";
+    private static final String DEVICE_TYPE_GAANE = "gaane";
+
 
     @Override
     public WebhookResponseHandler.ActionsOnCar processRequest(String requestData) {
@@ -32,6 +37,12 @@ public class WebhookRequestProcessor extends RequestProcessor<WebhookResponseHan
         WebhookResponseHandler.ActionsOnCar actionsOnCar;
 
         String action = getWebhookRequest(requestData).getResult().getAction();
+
+        String deviceType = getWebhookRequest(requestData).getResult().getParameters().getDeviceType();
+
+        String actionOnDevice = getWebhookRequest(requestData).getResult().getParameters().getSwitch();
+
+
 
         if (action.equalsIgnoreCase(THERMO_ON)) {
 
@@ -54,7 +65,7 @@ public class WebhookRequestProcessor extends RequestProcessor<WebhookResponseHan
             actionsOnCar = SORRY;
         }
 
-        return actionsOnCar;
+        return actionsOnCar.setDeviceName(deviceType);
 
     }
 }
