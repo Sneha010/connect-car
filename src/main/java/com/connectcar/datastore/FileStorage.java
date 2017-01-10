@@ -16,9 +16,9 @@ public class FileStorage {
 
     private static final String filePath = new File("").getAbsolutePath();
 
-    private static final String USER_FILE = "user_info.txt";
+    private static final String USER_FILE = "/user_info.txt";
 
-    private static final String DEVICE_FILE = "user_info.txt";
+    private static final String DEVICE_FILE = "/user_info.txt";
 
     public static Response storeUserInfo(String userData) {
 
