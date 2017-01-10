@@ -1,9 +1,22 @@
 package com.connectcar.webhook;
 
-/**
- * Created by dksc102950 on 1/8/17.
- */
-public interface RequestProcessor {
+import com.google.gson.Gson;
 
-    ResponseActions processRequest(WebhookRequest request);
+/**
+ * Created by Piyush Agarwal on 1/9/17.
+ */
+public abstract class RequestProcessor<T> {
+
+
+    public abstract T processRequest(String request);
+
+
+    protected WebhookRequest getWebhookRequest(String requestData) {
+
+        WebhookRequest request = new Gson().fromJson(requestData, WebhookRequest.class);
+
+        return request;
+
+    }
+
 }

@@ -1,12 +1,8 @@
 package com.connectcar.pushcar;
 
-import com.connectcar.webhook.ResponseActions;
-import com.connectcar.webhook.WebhookResponse;
 import com.google.android.gcm.server.Message;
 import com.google.android.gcm.server.Result;
 import com.google.android.gcm.server.Sender;
-import com.sun.org.apache.bcel.internal.generic.RET;
-import com.sun.org.apache.regexp.internal.RE;
 
 import java.io.IOException;
 
@@ -50,7 +46,7 @@ public class CarMessageSender {
             Sender sender = new Sender(apiKey);
 
             Message pushMessage = new Message.Builder()
-                    .addData("actionId", message.getActionOnGoogle().toString())
+                    .addData("actionId", message.getActionsOnCar().toString())
                     .addData("message", message.getMessage())
                     .build();
 

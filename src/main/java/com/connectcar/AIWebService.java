@@ -2,6 +2,8 @@ package com.connectcar;
 
 import com.connectcar.dao.DeviceInfo;
 import com.connectcar.dao.User;
+import com.connectcar.processor.WebhookResponseHandler;
+import com.connectcar.processor.WebhookRequestProcessor;
 import com.connectcar.pushcar.CarActionMessage;
 import com.connectcar.pushcar.CarMessageSender;
 import com.connectcar.webhook.*;
@@ -107,32 +109,30 @@ public class AIWebService {
 
         System.out.println("Request Data : " + requestData);
 
-        WebhookRequest request = new Gson().fromJson(requestData, WebhookRequest.class);
+        WebhookRequestProcessor processor = new WebhookRequestProcessor();
 
-        RequestProcessor processor = new WebhookRequestProcessor();
+        WebhookResponseHandler.ActionsOnCar actionsOnCar = processor.processRequest(requestData);
 
-        ResponseActions responseActions = processor.processRequest(request);
+        WebhookResponseHandler webhookResponseHandler = new WebhookResponseHandler(actionsOnCar);
 
-        System.out.println("Action detected " + responseActions.getActionOnGoogle().getAction());
+        System.out.println("Action detected " + webhookResponseHandler.getActionsOnCar().getAction());
 
-        WebhookResponse response = responseActions.getJsonResponse();
+        WebhookResponse response = webhookResponseHandler.buildResponseForAI();
 
         //sendNotificationToCar(actionOnGoogle, response);
 
-        String responseData = new Gson().toJson(response, WebhookResponse.class);
+        System.out.println("Sending Response to api.ai " + response.buildJsonOfResponse());
 
-        System.out.println("Sending Response to api.ai " + responseData);
-
-        return responseData;
+        return response.buildJsonOfResponse();
 
     }
 
 
-    private void sendNotificationToCar(ResponseActions.ActionOnGoogle actionOnGoogle, WebhookResponse response) {
+    private void sendNotificationToCar(WebhookResponseHandler.ActionsOnCar actionsOnCar, WebhookResponse response) {
         CarMessageSender sender = CarMessageSender.getInstance("");
 
         CarActionMessage message = new CarActionMessage();
-        message.setActionOnGoogle(actionOnGoogle);
+        message.setActionsOnCar(actionsOnCar);
         message.setMessage(response.getDisplayText());
 
         Result result = sender.sendMessageToCar("", message);

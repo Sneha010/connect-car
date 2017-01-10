@@ -1,6 +1,6 @@
 package com.connectcar.pushcar;
 
-import com.connectcar.webhook.ResponseActions;
+import com.connectcar.processor.WebhookResponseHandler;
 
 /**
  * Created by Piyush Agarwal on 1/8/17.
@@ -10,17 +10,17 @@ import com.connectcar.webhook.ResponseActions;
  */
 public class CarActionMessage {
 
-    private ResponseActions.ActionOnGoogle actionOnGoogle;
+    private WebhookResponseHandler.ActionsOnCar actionsOnCar;
 
     private String message;
 
 
-    public ResponseActions.ActionOnGoogle getActionOnGoogle() {
-        return actionOnGoogle;
+    public WebhookResponseHandler.ActionsOnCar getActionsOnCar() {
+        return actionsOnCar;
     }
 
-    public void setActionOnGoogle(ResponseActions.ActionOnGoogle actionOnGoogle) {
-        this.actionOnGoogle = actionOnGoogle;
+    public void setActionsOnCar(WebhookResponseHandler.ActionsOnCar actionsOnCar) {
+        this.actionsOnCar = actionsOnCar;
     }
 
     public String getMessage() {

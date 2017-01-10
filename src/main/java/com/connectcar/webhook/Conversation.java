@@ -4,6 +4,10 @@ package com.connectcar.webhook;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+/**
+ *
+ * Created by Piyush Agarwal on 1/9/17.
+ */
 public class Conversation {
 
     @SerializedName("conversation_token")
