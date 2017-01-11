@@ -94,7 +94,7 @@ public class WebhookResponseHandler {
 
         WebhookResponse webhookResponse = new WebhookResponse.Builder()
                 .speech(personalizedMySpeech(speech))
-                .displayText(displayText)
+                .displayText(personalizedMySpeech(displayText))
                 .expectUserResponse(false)
                 .isSSML(false)
                 .build();

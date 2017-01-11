@@ -47,7 +47,7 @@ public class CarMessageSender {
             Sender sender = new Sender(apiKey);
 
             Message pushMessage = new Message.Builder()
-                    .addData("actionId", message.getActionsOnCar().toString())
+                    .addData("actionId", ""+message.getActionsOnCar().getAction())
                     .addData("message", message.getMessage())
                     .build();
 
