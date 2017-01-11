@@ -26,7 +26,7 @@ public class AIWebService {
     // The Java method will process HTTP GET requests
 
 
-    private static final String API_KEY="";
+    private static final String API_KEY="AIzaSyAv0a0f9gjl8BbT3PNizwX0AbWn7FvvK4M";
 
     @POST
     @Path("/user")
@@ -110,7 +110,7 @@ public class AIWebService {
 
         WebhookResponse response = webhookResponseHandler.buildResponseForAI();
 
-        //sendNotificationToCar(actionOnGoogle, response);
+        sendNotificationToCar(actionsOnCar, response);
 
         System.out.println("Sending Response to api.ai " + response.buildJsonOfResponse());
 
@@ -120,13 +120,15 @@ public class AIWebService {
 
 
     private void sendNotificationToCar(WebhookResponseHandler.ActionsOnCar actionsOnCar, WebhookResponse response) {
-        CarMessageSender sender = CarMessageSender.getInstance("");
+        CarMessageSender sender = CarMessageSender.getInstance(API_KEY);
 
         CarActionMessage message = new CarActionMessage();
         message.setActionsOnCar(actionsOnCar);
         message.setMessage(response.getDisplayText());
 
-        Result result = sender.sendMessageToCar("", message);
+        System.out.println("Sending message to "+FileStorage.getDeviceInfo().getDevicePushToken());
+
+        Result result = sender.sendMessageToCar(FileStorage.getDeviceInfo().getDevicePushToken(), message);
 
         System.out.println("Send message to car result = " + result);
     }
