@@ -26,7 +26,7 @@ public class AIWebService {
     // The Java method will process HTTP GET requests
 
 
-    private static final String API_KEY="AIzaSyBMTdJKpmUUlzVLvsHdcuJ-99ysp9WVdtg";
+    private static final String API_KEY="AIzaSyChuYzwk5vHk4tOXWj_i3S6CXx8w6BYD2k";
 
     @POST
     @Path("/user")
