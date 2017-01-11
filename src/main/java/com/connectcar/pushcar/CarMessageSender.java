@@ -1,5 +1,6 @@
 package com.connectcar.pushcar;
 
+import com.google.android.gcm.server.InvalidRequestException;
 import com.google.android.gcm.server.Message;
 import com.google.android.gcm.server.Result;
 import com.google.android.gcm.server.Sender;
@@ -54,8 +55,14 @@ public class CarMessageSender {
 
             System.out.println("Result for google server = " + result);
 
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (InvalidRequestException ex) {
+
+            System.out.println("Failed = " + ex.getMessage());
+
+
+        }  catch (IOException e) {
+            System.out.println("Failed = " + e.getMessage());
+
         }
 
         return result;
