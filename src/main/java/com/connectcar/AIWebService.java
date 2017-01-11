@@ -104,6 +104,9 @@ public class AIWebService {
 
         WebhookResponseHandler.ActionsOnCar actionsOnCar = processor.processRequest(requestData);
 
+        System.out.println("Action found " + actionsOnCar );
+
+
         WebhookResponseHandler webhookResponseHandler = new WebhookResponseHandler(actionsOnCar);
 
         System.out.println("Action detected " + webhookResponseHandler.getActionsOnCar().getAction());
