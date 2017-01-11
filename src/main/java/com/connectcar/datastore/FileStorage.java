@@ -18,7 +18,7 @@ public class FileStorage {
 
     private static final String USER_FILE = "/user_info.txt";
 
-    private static final String DEVICE_FILE = "/user_info.txt";
+    private static final String DEVICE_FILE = "/device_info.txt";
 
     public static Response storeUserInfo(String userData) {
 
@@ -64,7 +64,7 @@ public class FileStorage {
 
         } catch (IOException e) {
 
-            System.out.println("Error in storing user information " + e.getMessage());
+            System.out.println("Error in fetching user information " + e.getMessage());
 
         }
 
@@ -124,7 +124,7 @@ public class FileStorage {
 
         } catch (IOException e) {
 
-            System.out.println("Error in storing user information " + e.getMessage());
+            System.out.println("Error in fetching user information " + e.getMessage());
 
         }
 
