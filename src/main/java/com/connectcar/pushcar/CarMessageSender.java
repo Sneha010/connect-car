@@ -4,8 +4,6 @@ import com.google.android.gcm.server.InvalidRequestException;
 import com.google.android.gcm.server.Message;
 import com.google.android.gcm.server.Result;
 import com.google.android.gcm.server.Sender;
-import com.pushraven.Notification;
-import com.pushraven.Pushraven;
 
 import java.io.IOException;
 
@@ -66,20 +64,6 @@ public class CarMessageSender {
             System.out.println("Failed = " + e.getMessage());
 
         }
-
-
-       /* Pushraven.setKey(apiKey);
-
-        Notification raven = new Notification();
-        raven.title("MyTitle")
-                .text("Hello World!")
-                .color("#ff0000")
-                .to(regId);
-
-        Pushraven.push(raven);
-*/
-
-
 
         return result;
 
