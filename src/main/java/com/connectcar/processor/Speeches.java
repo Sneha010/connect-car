@@ -12,5 +12,6 @@ public class Speeches {
     public static String SORRY_COULD_NOT_UNDERSTAND = "Sorry <user>, I could not understand what you want to say. Try again.";
 
 
+    public static String WELCOME = "Hello <user> ";
 
 }

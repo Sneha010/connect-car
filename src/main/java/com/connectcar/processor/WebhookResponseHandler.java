@@ -15,7 +15,7 @@ public class WebhookResponseHandler {
 
     public enum ActionsOnCar {
 
-        THERMOSTAT_ON(1), THERMOSTAT_OFF(2), START_MUSIC(3), STOP_MUSIC(4), SORRY(0);
+        THERMOSTAT_ON(1), THERMOSTAT_OFF(2), START_MUSIC(3), STOP_MUSIC(4), WELCOME_MESSAGE(5), SORRY(0);
 
         private int action;
 

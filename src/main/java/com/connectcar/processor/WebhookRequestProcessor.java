@@ -24,6 +24,7 @@ public class WebhookRequestProcessor extends RequestProcessor<WebhookResponseHan
     private static String THERMO_OFF = "thermostat-off";
     private static String MUSIC_ON = "music-on";
     private static String MUSIC_OFF = "music-off";
+    private static String WELCOME = "input.welcome";
 
     private static final String DEVICE_TYPE_THERMO = "thermostat";
     private static final String DEVICE_TYPE_HEATER = "heater";
@@ -60,7 +61,11 @@ public class WebhookRequestProcessor extends RequestProcessor<WebhookResponseHan
 
             actionsOnCar = STOP_MUSIC;
 
-        }else {
+        }else if (action.equalsIgnoreCase(WELCOME)){
+
+            actionsOnCar = WELCOME_MESSAGE;
+
+        } else {
 
             actionsOnCar = SORRY;
         }
